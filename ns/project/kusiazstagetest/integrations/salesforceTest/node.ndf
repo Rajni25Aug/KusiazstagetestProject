@@ -45,9 +45,8 @@
   <value name="retry_max">0</value>
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
-    <value name="createdBy">KumariRajni.Singh@ibm.com</value>
-    <value name="createdDate">1758105800742</value>
-    <value name="lastModifiedDate">1758105800742</value>
+    <value name="lastModifiedBy">kusiazstage2</value>
+    <value name="lastModifiedDate">1758108186464</value>
     <value name="displayName">salesforceTest</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -63,11 +62,11 @@
         <value name="name">Salesforce® CRM REST</value>
         <value name="providerName">WmSalesforceRESTProvider</value>
         <record name="operation" javaclass="com.wm.util.Values">
-          <value name="operationName">SalesAccount</value>
+          <value name="operationName">acconut1</value>
           <value name="isCustom">true</value>
           <value name="operationType">actions</value>
           <value name="connectionType">sagcloud</value>
-          <value name="projectName">project.siqatest1009</value>
+          <value name="projectName">project.kusiazstagetest</value>
         </record>
         <value name="appType">predefined</value>
         <Boolean name="hasAccount">true</Boolean>
@@ -86,11 +85,11 @@
         <Boolean name="allowDeleteApplication">false</Boolean>
         <Boolean name="allowUpdateApplication">false</Boolean>
         <record name="connection" javaclass="com.wm.util.Values">
-          <value name="connectionName">Sales_Conn</value>
+          <value name="connectionName">testSalesforce</value>
           <value name="connectionType">sagcloud</value>
           <null name="description"/>
         </record>
-        <value name="connectionNSName">project.kusiazstagetest.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:Sales_Conn</value>
+        <value name="connectionNSName">project.kusiazstagetest.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:testSalesforce</value>
         <value name="connectionType">sagcloud</value>
         <Boolean name="accountReferenceResolved">true</Boolean>
         <Boolean name="serviceReferenceResolved">true</Boolean>
@@ -112,12 +111,8 @@
         <number name="nodeIndex" type="Long">0</number>
         <number name="lineNumberForDebug" type="Long">1</number>
         <null name="outputMapSet"/>
+        <value name="nodePathForDebug">0</value>
       </record>
-    </record>
-    <record name="edgeServer" javaclass="com.wm.util.Values">
-      <value name="group">Default</value>
-      <value name="id">default</value>
-      <value name="name">Cloud Execution</value>
     </record>
   </record>
   <value name="svc_in_validator_options">none</value>
