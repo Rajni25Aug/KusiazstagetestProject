@@ -56,8 +56,12 @@ packages:
   gitUsername: Rajni25Aug
   gitBranch: Test2
 - name: WmJDBCAdapter
+  version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: WmSalesforceRESTProvider
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: supported
 services:
 - serviceName: project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_1
   packages:
@@ -85,6 +89,36 @@ services:
     version: "1.0"
   - name: SIQACloudStreamsTests
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 10.7.0.0.196
+- serviceName: project.kusiazstagetest.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:testSalesforce
+  packages:
+  - name: KusiazstagetestProject
+    version: "1.0"
+  - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SSL_JDBC_Test
+    version: "1.0"
+  - name: JMSTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 10.7.0.0.66
+  - name: SIQA_OriginTest_OnPremAssets
+    version: "1.0"
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 10.7.0.0.196
 - serviceName: project.kusiazstagetest.integrations:Sum
   packages:
   - name: KusiazstagetestProject
@@ -111,6 +145,8 @@ services:
     version: "1.0"
   - name: SIQACloudStreamsTests
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 10.7.0.0.196
 - serviceName: pub.math:addInts
   packages:
   - name: WmPublic
@@ -145,6 +181,8 @@ services:
     version: "1.0"
   - name: SIQACloudStreamsTests
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 10.7.0.0.196
 - serviceName: pub.string:stringToBytes
   packages:
   - name: WmPublic
@@ -187,7 +225,9 @@ services:
     version: "1.0"
   - name: SIQACloudStreamsTests
     version: "1.0"
-- serviceName: project.siqatest1009.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.operations.actions:SalesAccount
+  - name: WmSalesforceRESTProvider
+    version: 10.7.0.0.196
+- serviceName: project.kusiazstagetest.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.operations.actions:acconut1
   packages:
   - name: KusiazstagetestProject
     version: "1.0"
@@ -213,50 +253,134 @@ services:
     version: "1.0"
   - name: SIQACloudStreamsTests
     version: "1.0"
+  - name: WmSalesforceRESTProvider
+    version: 10.7.0.0.196
 configurationVariables:
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.driverType
   : drivergroup
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.retryIfRequestSentOk
+  : "true"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.portNumber
   : "3306"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
   : "1000"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.authorizationHeaderInTokenRefresh
+  : "false"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.accessTokenRefreshURLRequest
+  : URL Query String
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.expireTimeout
+  : "1000"
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.datasourceClass
+  : com.mysql.cj.jdbc.MysqlDataSource
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.keepAliveInterval
+  : "300000"
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.timeoutType
+  : auto
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cx.grant_type
+  : refresh_token
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.connectTimeout
+  : "30000"
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.user
+  : siqatest
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.providerUrl
+  : https://sag53-dev-ed.develop.my.salesforce.com
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
+  : 9.46.196.248
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.otherProperties
+  : loginTimeout=60;driverType=thin;
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.accessTokenRefreshURL
+  : https://login.salesforce.com/services/oauth2/token
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.reuseAddr
+  : "false"
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.tcpNoDelay
+  : "false"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.authenticationServerUrl
+  : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth.consumerSecret
+  : "{AES}ePv9vDKXdd6A2HDsPDBAO8y1Fe9R7m6Dya5xSCLlAK353vKmgg/uiZT0YAoUU42Eojf9A5EvRE+pSL3aLrpBNWmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.retryCount
+  : "4"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.minimumPoolSize
+  : "1"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.readTimeout
+  : "30000"
+  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
+  : "10"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.scope
+  : offline_access api refresh_token
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.maximumPoolSize
+  : "10"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.startupBackoffSecs
+  : "10"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.password
   : "{AES}D6/2AGfsSWDOcWCLrORnEQ=="
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
   : tcp
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.trustStore
   : ""
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.datasourceClass
-  : com.mysql.cj.jdbc.MysqlDataSource
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
-  : "0"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth.consumerId
+  : 3MVG9k02hQhyUgQCKlnwOVc1lTfY9AqPHmUIRA6I.ZqYzln.F3Vuok.Rk6d6F00IhbOJxstGzhIJDyuJGd0ft
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
   : "0"
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.user
-  : siqatest
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth.accessToken
+  : "{AES}h1r1CmTvU65r25EqPgWKVQArDytLsjrL4GDIZT1nnC60pxjRAjf9nh3x15mBXooy+gf5+K9GXU1ITYYfhYhqBxv0I2nF3tYs6Lu2l9us1vAoqDZ1et+lLCxELhCxdOPTP/UyxCmx2jFKoh8IGVrmxGmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.poolable
+  : "true"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
   : "false"
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
-  : 9.46.196.248
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.otherProperties
-  : loginTimeout=60;driverType=thin;
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.refreshToken
+  : "{AES}z0OyKRGMCuSrw5+VwAKX9/oM6BIKjPeYnDaBN96E5WE51ihADTbuVPxNgEzibj4QZ+EkdVmuzavsuGo7cSFFyYqssvQYfu051UABuvfGck7t1OSEZFCXaC8TXIG3+XjN"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.sockBuffSize
+  : "8192"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
   : "1"
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
-  : "10"
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.blockTimeout
   : "1000"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
   : NO_TRANSACTION
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.validateAfterInactivity
+  : "1000"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.authorizationServerUrl
+  : https://login.salesforce.com/services/oauth2/authorize
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.authorizationHeaderPrefix
+  : Bearer
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.keyStore
   : ""
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolIncrementSize
   : "1"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionEnabled
   : "false"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.enableSNI
+  : "true"
+  ? iscloudstreamsconnectorservice.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:acconut1.virtualServiceName
+  : WmCloudStreams.RestVS
+  ? iscloudstreamsconnectorservice.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:acconut1.connectionAlias
+  : project.kusiazstagetest.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:testSalesforce
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.idleTimeout
+  : "-1"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.cn.enableCompression
+  : "false"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.databaseName
   : MYSQL_DATABASE
-  ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
-  : "10"
+  ? cloudstreamsconnection.project..kusiazstagetest..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:testSalesforce.oauth_v20.refreshAccessToken
+  : "true"
   ? artConnection.KusiazstagetestProject.project.kusiazstagetest.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.dbType
   : MySQL

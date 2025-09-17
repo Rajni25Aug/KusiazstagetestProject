@@ -18,17 +18,18 @@
     <value name="JMSTest">1.0</value>
     <value name="SIQA_OriginTest_OnPremAssets">1.0</value>
     <value name="WmJDBCAdapter">10.3.0.0.34</value>
+    <value name="WmSalesforceRESTProvider">10.7.0.0.196</value>
   </record>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">20</value>
+  <value name="build">21</value>
   <null name="description"/>
   <value name="created_date">17-09-2025 10:37:47 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2025-09-17T11:23:06.941894471Z</value>
+  <value name="lastUpdated">2025-09-17T11:23:56.731910641Z</value>
   <value name="wmProjectId">flbe8d4cac882322c5d82a06</value>
   <value name="creator">Kusi Azstage</value>
 </Values>
