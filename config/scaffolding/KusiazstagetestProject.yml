@@ -42,6 +42,11 @@ packages:
   gitUrl: https://github.com/prabhakarsag
   gitUsername: prabhakarsag
   gitBranch: main
+- name: SIQA_OriginTest_OnPremAssets
+  gitServerName: kusiAzStage2
+  gitUrl: https://github.com/vijetadixit
+  gitUsername: Rajni25Aug
+  gitBranch: Test2
 services:
 - serviceName: project.kusiazstagetest.integrations:Sum
   packages:
